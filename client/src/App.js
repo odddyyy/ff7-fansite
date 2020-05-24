@@ -4,9 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 // pages
 import Main from './pages/Main'
-
-//components
-import Navbar from './components/Navbars'
+import Home from './pages/Home'
 
 // routes definition
 const routes = [
@@ -14,6 +12,10 @@ const routes = [
     path: '/',
     exact: true,
     children: <Main />
+  },
+  {
+    path: '/home',
+    children: <Home />
   }
 ]
 
@@ -21,7 +23,6 @@ function App() {
   return (
     <Router>
     <div>
-      <Navbar />
       <Switch>
         {routes.map((route, key) => (
           <Route key={key} {...route}/>
